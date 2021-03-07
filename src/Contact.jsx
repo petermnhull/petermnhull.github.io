@@ -10,7 +10,7 @@ class Contact extends React.Component {
             <div style={divStyle}>
                 <h2>Contact</h2>
                 <main>
-                    <p>Under construction.</p>
+                    <p>Under construction again.</p>
                 </main>
             </div>
         )
