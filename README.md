@@ -11,10 +11,11 @@ This is my personal website built with React.
 3. Make code changes in `src` directory.
 4. Check code changes work.
 5. Update the local production build with `yarn build`.
-5. Commit changes and merge branch to Main to keep source code up to date.
+6. Commit changes and merge branch to Main to keep source code up to date.
 
 ### Deployment
-Once everything looks good, deploy with `yarn deploy`. This publishes the necessary changes to the `gh-pages` branch for hosting the website.
+Once the build has updated, make sure to bring in any changes in the `build` directory into the `docs` directory (this is what Github uses to build and deploy the website).
+
 
 # Further Information
 
