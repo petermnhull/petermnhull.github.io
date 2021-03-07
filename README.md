@@ -1,6 +1,6 @@
 # petermnhull.github.io
 
-This is my personal website built with React.
+This is my personal website built with React. Click [here](https://petermnhull.github.io) to check it out.
 
 ## Workflow
 
