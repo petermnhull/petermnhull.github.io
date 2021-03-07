@@ -5,20 +5,19 @@ This is my personal website built with React.
 ## Workflow
 
 ### Development
-See below for more detail on how to run the local development scripts.
 
-- Checkout a new branch from Master.
-- Start a local app in development mode with `yarn start`.
-- Make code changes in `src` directory.
-- Check code changes work.
-- Commit changes and merge branch to master to keep source code up to date.
+1. Checkout a new branch from Master.
+2. Start a local app in development mode with `yarn start`.
+3. Make code changes in `src` directory.
+4. Check code changes work.
+5. Commit changes and merge branch to master to keep source code up to date.
 
-### Deploy
-- Once everything looks good, deploy with `npm run deploy`. This publishes the necessary changes to the `gh-pages` branch for hosting the website.
+### Deployment
+Once everything looks good, deploy with `npm run deploy`. This publishes the necessary changes to the `gh-pages` branch for hosting the website.
 
 # Further Information
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project (and this section of the README) was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
