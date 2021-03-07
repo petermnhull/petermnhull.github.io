@@ -11,8 +11,8 @@ class App extends React.Component {
         <div className="App">
           <div>
             <nav>
-                <Link to="/">Home</Link>&nbsp;
-                <Link to="/about">About</Link>&nbsp;
+                <Link to="/">Home</Link>&nbsp;&nbsp;
+                <Link to="/about">About</Link>&nbsp;&nbsp;
                 <Link to="/contact">Contact</Link>
             </nav>
           </div>

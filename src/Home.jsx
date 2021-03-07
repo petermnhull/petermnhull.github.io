@@ -11,16 +11,11 @@ class Home extends React.Component {
                 <p>
                     Under construction.
                 </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                </a>
+                <p>
+                Please come back later.
+                </p>
                 </header>
             </div>
-
         );
     }
 }
