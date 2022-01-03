@@ -7,7 +7,7 @@ const App = () => {
       <h1>
         Hi, I'm Peter.
       </h1>
-      <img src={profilePhoto} width="150"></img>
+      <img src={profilePhoto} width="150" alt="headshot"></img>
       <p>
         I'm a backend and ML engineer, currently working at a start-up called ComplyAdvantage.
       </p>
