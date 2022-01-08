@@ -10,3 +10,7 @@ img {
     border-radius: 50%;
     padding: 5px;
 }
+
+nav {
+    text-align: right;
+}

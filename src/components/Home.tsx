@@ -1,7 +1,6 @@
-import "./Home.css"
-import profilePhoto from "../assets/profile.jpg"
-import githubPhoto from "../assets/github.png"
-import linkedinPhoto from "../assets/linkedin.png"
+import profilePhoto from "./assets/profile.jpg"
+import githubPhoto from "./assets/github.png"
+import linkedinPhoto from "./assets/linkedin.png"
 
 const Home = () => {
   return (
@@ -19,7 +18,7 @@ const Home = () => {
         <a href="https://github.com/petermnhull">
         <img src={githubPhoto} width="40" alt="github"></img>
         </a>
-        <a href="https://linkedin.com/petermnhull">
+        <a href="https://uk.linkedin.com/in/petermnhull">
         <img src={linkedinPhoto} width="40" alt="linkedin"></img>
         </a>
       </div>
