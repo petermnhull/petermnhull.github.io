@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+    color: black;
+    padding: 40px;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    padding: 5px;
+}
