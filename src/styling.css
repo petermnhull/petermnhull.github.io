@@ -10,3 +10,38 @@ img {
     border-radius: 50%;
     padding: 5px;
 }
+
+hr {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 8px auto;
+    height: 0;
+    width: 100%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #ffffff;
+}
+
+button {
+    font-family: "Roboto";
+    font-size: 10px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block; 
+    background-color: none;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    background-color: lightseagreen;
+    color: white;
+}
