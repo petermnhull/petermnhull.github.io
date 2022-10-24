@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[795],{795:function(e,t,u){e.exports=u.p+"static/media/blog_20221024.de09b5e88dacd2dea24b.md"}}]);
