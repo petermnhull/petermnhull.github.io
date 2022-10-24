@@ -4,10 +4,12 @@ import Home from "./Home";
 import Blog from "./Blog";
 import Blogs from "./Blogs";
 import NotFound from "./NotFound";
-import { b1 } from "../constants";
+import { blogs } from "./constants";
 
 const getBlogRoutes = () => {
-  return <Route path={"blog/" + b1.fileName} element={<Blog fileName={b1.fileName + ".md"}/>}/>
+    return blogs.map(blog => (
+        <Route path={"blog/" + blog.fileName} element={<Blog fileName={blog.fileName + ".md"}/>}/>
+    ))
 }
 
 const App = () => {

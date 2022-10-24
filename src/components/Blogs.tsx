@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import { b1 } from "../constants";
+import { blogs } from "./constants";
+
+const getBlogContents = () => {
+  return blogs.map(blog => (
+    <p>
+      <Link to={blog.fileName}>{blog.title}</Link>
+    </p>
+  )) 
+}
 
 const Blogs = () => {
   return (
     <div>
     <Header page="blog"/>
-    <Link to={b1.fileName}>{b1.title}</Link>
+    {getBlogContents()}
     </div>
   );
 }
