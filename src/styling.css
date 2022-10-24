@@ -1,7 +1,7 @@
 body {
+    padding: 20px;
     background-color: white;
     color: black;
-    padding: 40px;
     font-family: 'Arial';
     text-align: center;
     font-size: 20px;
@@ -10,22 +10,7 @@ body {
 img {
     border-radius: 50%;
     padding: 5px;
-}
-
-hr {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 8px auto;
-    height: 0;
-    width: 100%;
-    max-height: 0;
-    font-size: 1px;
-    line-height: 0;
-    clear: both;
-    border: none;
-    border-top: 1px solid #aaaaaa;
-    border-bottom: 1px solid #ffffff;
+    margin: 5px;
 }
 
 button {
@@ -34,15 +19,17 @@ button {
     color: black;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block; 
     background-color: lightcyan;
     transition-duration: 0.3s;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-right: 5px;
     margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 button:hover {
@@ -52,27 +39,27 @@ button:hover {
 
 
 #header {
-    display:flex;
-    margin: 10px;
-    padding: 5px;
-    vertical-align: middle;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
 .alignleft {
-    width: 15%;
+    width: 30%;
     text-align: left;
     float: left;
 }
 
 .aligncenter {
-    width: 70%;
+    width: 40%;
     text-align: center;
-    font-family: 'Arial';
-    font-size: 40px;
+    font-size: 30px;
 }
+
 .alignright {
-    width: 15%;
+    width: 30%;
     text-align: right;
+    float: right;
 }
 
 #post {
