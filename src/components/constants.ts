@@ -1,7 +1,6 @@
-
 export const blogs = [
     {
-        title: "Test Blog (Actual Blog Coming Soon)",
-        fileName: "blog"
-    }
+        title: "Building a Mini Data Warehouse with Athena and Kafka Connect",
+        fileName: "2022_10_24_mini_data_warehouse"
+    },
 ]
