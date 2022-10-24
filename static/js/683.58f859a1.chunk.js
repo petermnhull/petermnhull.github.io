@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[683],{683:function(e,t,u){e.exports=u.p+"static/media/blog.5e88a8d3f15e8eae9746.md"}}]);
