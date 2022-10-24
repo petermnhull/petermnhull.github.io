@@ -4,6 +4,11 @@ import Home from "./Home";
 import Blog from "./Blog";
 import Blogs from "./Blogs";
 import NotFound from "./NotFound";
+import { b1 } from "../constants";
+
+const getBlogRoutes = () => {
+  return <Route path={"blog/" + b1.fileName} element={<Blog fileName={b1.fileName + ".md"}/>}/>
+}
 
 const App = () => {
   return (
@@ -12,7 +17,7 @@ const App = () => {
           <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="blog" element={<Blogs />}/>
-              <Route path="blog/test_blog" element={<Blog fileName="blog.md"/>}/>
+              {getBlogRoutes()}
               <Route path="*" element={<NotFound />}/>
           </Routes>
       </HashRouter>

@@ -1,13 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
-import React from "react";
-import Blog from "./Blog";
+import { Link } from "react-router-dom";
 import Header from "./Header";
+import { b1 } from "../constants";
 
 const Blogs = () => {
   return (
     <div>
     <Header page="blog"/>
-    <Link to="test_blog">Test Blog (Actual Blog Coming Soon...)</Link>
+    <Link to={b1.fileName}>{b1.title}</Link>
     </div>
   );
 }
