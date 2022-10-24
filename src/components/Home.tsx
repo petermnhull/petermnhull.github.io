@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Header page="home"/>
-      <img className="websiteImg" src="profile.jpg" width="20%" height="auto" alt="headshot"></img>
+      <img className="websiteImg" src="profile.jpg" width="150" height="auto" alt="headshot"></img>
       <div>
         <p>
           I'm a <b>Software Engineer</b> who loves <i>music</i>, <i>science</i>, and <i>sustainability</i>. I also occasionally <Link to="/blog">write</Link>.
