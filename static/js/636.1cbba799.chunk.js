@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[636],{9636:function(e,t,i){e.exports=i.p+"static/media/2022_10_24_mini_data_warehouse.9a539182b27d52bf7e0a.md"}}]);

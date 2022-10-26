@@ -30,8 +30,7 @@ We made use of a [MultiWriter](https://pkg.go.dev/io#MultiWriter) to copy the ou
 
 The events look something like this:
 
-
-```json
+<CodeBlock>
 {
   "id": "123abc",
   "createdAt": "2022-09-06T11:49:34Z",
@@ -48,7 +47,7 @@ The events look something like this:
   },
   "accountId": "123"
 }
-```
+</CodeBlock>
 
 #### Kafka Connect and S3
 Now that the requests are recorded in Kafka, we sink the events from Kafka into S3 using [Kafka Connect](https://docs.confluent.io/platform/current/connect/index.html).
