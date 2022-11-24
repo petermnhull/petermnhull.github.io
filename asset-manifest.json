@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.011f2bdb.css",
-    "main.js": "/static/js/main.d2ca1b85.js",
-    "static/js/636.1cbba799.chunk.js": "/static/js/636.1cbba799.chunk.js",
+    "main.js": "/static/js/main.0d709cdf.js",
+    "static/js/636.495f3be9.chunk.js": "/static/js/636.495f3be9.chunk.js",
+    "static/js/520.0d1a7abe.chunk.js": "/static/js/520.0d1a7abe.chunk.js",
     "static/js/787.84af244d.chunk.js": "/static/js/787.84af244d.chunk.js",
-    "static/media/2022_10_24_mini_data_warehouse.md": "/static/media/2022_10_24_mini_data_warehouse.9a539182b27d52bf7e0a.md",
+    "static/media/2022_10_24_mini_data_warehouse.md": "/static/media/2022_10_24_mini_data_warehouse.f880da82467e5826446b.md",
+    "static/media/2022_11_02_lessons_in_ml_ops.md": "/static/media/2022_11_02_lessons_in_ml_ops.1b42175a395a965357c6.md",
     "index.html": "/index.html",
     "main.011f2bdb.css.map": "/static/css/main.011f2bdb.css.map",
-    "main.d2ca1b85.js.map": "/static/js/main.d2ca1b85.js.map",
+    "main.0d709cdf.js.map": "/static/js/main.0d709cdf.js.map",
     "787.84af244d.chunk.js.map": "/static/js/787.84af244d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.011f2bdb.css",
-    "static/js/main.d2ca1b85.js"
+    "static/js/main.0d709cdf.js"
   ]
 }
