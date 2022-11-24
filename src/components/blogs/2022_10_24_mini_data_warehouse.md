@@ -1,5 +1,6 @@
 ## Building a Mini Data Warehouse with Athena and Kafka Connect
-#### 24.10.2022
+
+24.10.2022
 
 At ComplyAdvantage, I'm in the Platform Team for the Customer Screening & Ongoing Monitoring product. Our mission is to simplify and modernise our backend architecture, ultimately to improve the customer experience and to attract new customers.
 
