@@ -13,7 +13,7 @@ const Home = () => {
         </p>
         <p>
           I specialise in <b>backend</b> and <b>machine learning</b> systems, and I currently work
-          on things like this at <a href="https://complyadvantage.com/">ComplyAdvantage</a>.
+          on things like this at <a href="https://arenko.group/">Arenko</a>.
         </p>
         <p>
           I studied <b>mathematics</b> at Imperial where I spent a lot of time researching{' '}
