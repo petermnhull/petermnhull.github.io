@@ -1,6 +1,10 @@
 export const blogs = [
   {
-    title: "Lessons in MLOps: How To Prioritise Automation",
+    title: "A Software Engineer at a Climate Change Conference",
+    fileName: '2023_07_11_net_zero'
+  },
+  {
+    title: 'Lessons in MLOps: How To Prioritise Automation',
     fileName: '2022_11_02_lessons_in_ml_ops'
   },
   {
