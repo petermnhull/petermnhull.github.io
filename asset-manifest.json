@@ -1,21 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.011f2bdb.css",
-    "main.js": "/static/js/main.23a924a8.js",
+    "main.js": "/static/js/main.dea6fc00.js",
     "static/js/636.495f3be9.chunk.js": "/static/js/636.495f3be9.chunk.js",
     "static/js/520.0d1a7abe.chunk.js": "/static/js/520.0d1a7abe.chunk.js",
     "static/js/208.c85cdd2a.chunk.js": "/static/js/208.c85cdd2a.chunk.js",
+    "static/js/837.476a9e67.chunk.js": "/static/js/837.476a9e67.chunk.js",
     "static/js/787.96d091b9.chunk.js": "/static/js/787.96d091b9.chunk.js",
+    "static/media/2024_01_02_gophercon_2023.md": "/static/media/2024_01_02_gophercon_2023.e6d799201a3eefb4719c.md",
     "static/media/2022_10_24_mini_data_warehouse.md": "/static/media/2022_10_24_mini_data_warehouse.f880da82467e5826446b.md",
     "static/media/2023_07_11_net_zero.md": "/static/media/2023_07_11_net_zero.6b29a7e315dd6389e5c8.md",
     "static/media/2022_11_02_lessons_in_ml_ops.md": "/static/media/2022_11_02_lessons_in_ml_ops.1b42175a395a965357c6.md",
     "index.html": "/index.html",
     "main.011f2bdb.css.map": "/static/css/main.011f2bdb.css.map",
-    "main.23a924a8.js.map": "/static/js/main.23a924a8.js.map",
+    "main.dea6fc00.js.map": "/static/js/main.dea6fc00.js.map",
     "787.96d091b9.chunk.js.map": "/static/js/787.96d091b9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.011f2bdb.css",
-    "static/js/main.23a924a8.js"
+    "static/js/main.dea6fc00.js"
   ]
 }
