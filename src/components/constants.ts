@@ -1,7 +1,7 @@
 export const blogs = [
   {
     title: "GopherCon UK 2023",
-    fileName: '2023_08_22_gophercon_2023'
+    fileName: '2024_01_02_gophercon_2023'
   },
   {
     title: "A Software Engineer at a Climate Change Conference",
