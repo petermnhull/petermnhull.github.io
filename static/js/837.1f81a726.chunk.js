@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[837],{7837:function(e,t,u){e.exports=u.p+"static/media/2024_01_02_gophercon_2023.f9325869645c4e235a36.md"}}]);
