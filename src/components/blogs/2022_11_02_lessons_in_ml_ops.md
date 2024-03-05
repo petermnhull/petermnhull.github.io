@@ -10,9 +10,9 @@ Hopefully this will show the challenges you might face when introducing automati
 
 When I first joined ComplyAdvantage, I worked on the [Adverse Media & Insight](https://complyadvantage.com/negative-news-screening-tool) product.
 
-To understand a little bit what this is for, imagine you're an analyst for a high street bank whose job it is to approve or reject applications for credit cards. To meet the bank's regulations you have to check that the applicant hasn't done anything *dodgy*. For example you might not be allowed to approve an application for someone who is on a sanctions list, or who is a [politically exposed person](https://en.wikipedia.org/wiki/Politically_exposed_person). You may also want to check if the applicant has shown up in the news.
+To understand a little bit what this is for, imagine you're an analyst for a high street bank whose job it is to approve or reject applications for credit cards. To meet the bank's regulations you have to check that the applicant hasn't done anything _dodgy_. For example you might not be allowed to approve an application for someone who is on a sanctions list, or who is a [politically exposed person](https://en.wikipedia.org/wiki/Politically_exposed_person). You may also want to check if the applicant has shown up in the news.
 
-The Adverse Media & Insight product provides a way to automate this final step, by revealing if the person has shown up in any news articles for doing something illegal or immoral (this is the *Adverse* bit in *Adverse Media*).
+The Adverse Media & Insight product provides a way to automate this final step, by revealing if the person has shown up in any news articles for doing something illegal or immoral (this is the _Adverse_ bit in _Adverse Media_).
 
 How do we provide that data? We have a pipeline which scrapes the web for articles and uses machine learning models to figure out who is in the article (i.e. [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition)) and what they've done (i.e. Text Classification). If the models decide that Bob Smith showed up in a BBC article for laundering money, the pipeline then sends that information to somewhere our client-facing systems can access. The pipeline looks like this:
 
@@ -25,7 +25,7 @@ Sometimes our Data Scientists want to change the models that extract entities an
 When we did this, we had to verify everything worked as expected when the new model was deployed. This involved a few tasks:
 
 1. Determine latencies for serving predictions.
-2. Determine the outputs that are *new* or *changed* (e.g. when a sentence changed classification).
+2. Determine the outputs that are _new_ or _changed_ (e.g. when a sentence changed classification).
 3. Perform statistical significance tests on elements that shouldn't change, to check for bias creeping in.
 4. For when we have annotated data, calculate the accuracy of the predictions.
 5. Collect a random sample of outputs for manual annotation to verify the predictions.
@@ -46,13 +46,14 @@ This looked ideal, as anytime we want to deploy a new model we can run the pipel
 ### Wait, why didn't this work?
 
 Our pipeline did a number of things really well, in particular:
-1. It was an effective mechanism for pushing a large amount of test data and quickly verifying the pipeline *works* (this was already a big step up in being able to deploy with confidence).
+
+1. It was an effective mechanism for pushing a large amount of test data and quickly verifying the pipeline _works_ (this was already a big step up in being able to deploy with confidence).
 2. It completely automated the process for collecting samples for manual annotation.
 3. We provided an easily-extensible framework, e.g. for adding new types of analysis in notebooks.
 
-However, our notebooks partially relied on a "gold test set", i.e. fully annotated outputs (i.e. classified sentences) corresponding to our inputs (i.e. news articles). But acquiring a gold test set was *hard*, and our data labelling provider struggled to provide us accurate annotations when manually checked by our in-house team. Without large-scale reliable annotated data, we couldn't produce the accuracy metrics we needed.
+However, our notebooks partially relied on a "gold test set", i.e. fully annotated outputs (i.e. classified sentences) corresponding to our inputs (i.e. news articles). But acquiring a gold test set was _hard_, and our data labelling provider struggled to provide us accurate annotations when manually checked by our in-house team. Without large-scale reliable annotated data, we couldn't produce the accuracy metrics we needed.
 
-We also used a "silver test set", i.e. the outputs of the *production* pipeline. This was useful for determining the *stability* of certain pipeline changes (e.g. making sure everything works as before if you refactor something). The issue with this is that we introduced models which significantly changed the structure of our responses, such as [co-reference resolution](https://nlp.stanford.edu/projects/coref.shtml). Our pipeline required *on-going* support in order to be useful for these kinds of changes.
+We also used a "silver test set", i.e. the outputs of the _production_ pipeline. This was useful for determining the _stability_ of certain pipeline changes (e.g. making sure everything works as before if you refactor something). The issue with this is that we introduced models which significantly changed the structure of our responses, such as [co-reference resolution](https://nlp.stanford.edu/projects/coref.shtml). Our pipeline required _on-going_ support in order to be useful for these kinds of changes.
 
 ### The lessons for next time
 
@@ -60,4 +61,5 @@ We also used a "silver test set", i.e. the outputs of the *production* pipeline.
 
 Forget all the fancy statistical tests and the gold test set; 99% of the business value was in pushing test data, collecting simple summary metrics and automated sampling. So next time we'll churn that out first and then iterate.
 
-A bonus lesson (which is similar to my previous [blog](https://petermnhull.github.io/#/blog/2022_10_24_mini_data_warehouse)): if you have a mechanism for quickly rolling back your deployments and your data, focus on live monitoring and alerting instead of a test suite. Try setting up a canary deployment so you can start serving requests in production as soon as possible - nothing is more valuable than production data! 
+A bonus lesson (which is similar to my previous [blog](https://petermnhull.github.io/#/blog/2022_10_24_mini_data_warehouse)): if you have a mechanism for quickly rolling back your deployments and your data, focus on live monitoring and alerting instead of a test suite. Try setting up a canary deployment so you can start serving requests in production as soon as possible - nothing is more valuable than production data!
+

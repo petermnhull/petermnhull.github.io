@@ -2,7 +2,7 @@ body {
     padding: 20px;
     background-color: white;
     color: black;
-    font-family: 'Arial';
+    font-family: "Arial";
     text-align: center;
     font-size: 20px;
 }
@@ -20,7 +20,7 @@ button {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-    display: inline-block; 
+    display: inline-block;
     background-color: lightcyan;
     transition-duration: 0.3s;
     border-radius: 50%;
@@ -36,7 +36,6 @@ button:hover {
     background-color: lightseagreen;
     color: white;
 }
-
 
 #header {
     display: flex;
