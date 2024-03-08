@@ -61,9 +61,9 @@ S3 was an obvious decision: at ComplyAdvantage, we use it anytime we need a chea
 
 We decided to do this instead of calling S3 directly for a number of reasons:
 
--   We already had this design pattern in a few places (e.g. sinking customer profiles from one service to a MongoDB via Kafka Connect). Our Strimzi Kafka Connect clusters were pretty much ready to plug-and-play.
--   It was a good opportunity to validate our vision for Event Driven Design (i.e. using Kafka to decouple consumers and producers).
--   The latency requirements for storing requests were low and so a lag introduced by a Kafka broker was acceptable.
+- We already had this design pattern in a few places (e.g. sinking customer profiles from one service to a MongoDB via Kafka Connect). Our Strimzi Kafka Connect clusters were pretty much ready to plug-and-play.
+- It was a good opportunity to validate our vision for Event Driven Design (i.e. using Kafka to decouple consumers and producers).
+- The latency requirements for storing requests were low and so a lag introduced by a Kafka broker was acceptable.
 
 #### Athena
 
@@ -93,9 +93,9 @@ At the time of writing, the pipeline looks a little something like this:
 
 This gives us numerous advantages:
 
--   As mentioned above, responses served by the PHP can be seen in S3.
--   Unlike `AppCA-PHP`, `Arpeggio` has comprehensive observability tooling with [DataDog](https://www.datadoghq.com/). If everything goes through `Arpeggio`, that means our distributed tracing shows up in DataDog.
--   Finally, the routing logic in Ambassador is very complicated and difficult to test. With that logic now in `Arpeggio`, we can unit test it and avoid issues caused by human error when updating Ambassador's complicated Regex-based configuration.
+- As mentioned above, responses served by the PHP can be seen in S3.
+- Unlike `AppCA-PHP`, `Arpeggio` has comprehensive observability tooling with [DataDog](https://www.datadoghq.com/). If everything goes through `Arpeggio`, that means our distributed tracing shows up in DataDog.
+- Finally, the routing logic in Ambassador is very complicated and difficult to test. With that logic now in `Arpeggio`, we can unit test it and avoid issues caused by human error when updating Ambassador's complicated Regex-based configuration.
 
 ### Conclusion
 

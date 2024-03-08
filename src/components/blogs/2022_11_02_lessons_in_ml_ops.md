@@ -62,4 +62,3 @@ We also used a "silver test set", i.e. the outputs of the _production_ pipeline.
 Forget all the fancy statistical tests and the gold test set; 99% of the business value was in pushing test data, collecting simple summary metrics and automated sampling. So next time we'll churn that out first and then iterate.
 
 A bonus lesson (which is similar to my previous [blog](https://petermnhull.github.io/#/blog/2022_10_24_mini_data_warehouse)): if you have a mechanism for quickly rolling back your deployments and your data, focus on live monitoring and alerting instead of a test suite. Try setting up a canary deployment so you can start serving requests in production as soon as possible - nothing is more valuable than production data!
-
