@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[208],{3208:function(e,t,u){e.exports=u.p+"static/media/2023_07_11_net_zero.6b29a7e315dd6389e5c8.md"}}]);

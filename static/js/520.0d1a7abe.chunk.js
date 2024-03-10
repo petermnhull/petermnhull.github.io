@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpetermnhull_github_io=self.webpackChunkpetermnhull_github_io||[]).push([[520],{3520:function(e,s,t){e.exports=t.p+"static/media/2022_11_02_lessons_in_ml_ops.1b42175a395a965357c6.md"}}]);
