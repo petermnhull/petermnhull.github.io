@@ -21,7 +21,3 @@ Run the production build on [http://localhost:3000](http://localhost:3000).
 ### `npm run deploy`
 
 Deploys the app build via `gh-pages`.
-
-### `npm run format`
-
-Auto-formats the code in the project using Prettier.
