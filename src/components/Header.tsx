@@ -8,12 +8,12 @@ enum Language {
 
 const titlesEN: Record<string, string> = {
   home: "Hi, I'm Peter.",
-  blog: "Blogs",
+  blog: "Blog",
 };
 
 const titlesFR: Record<string, string> = {
   home: "Salut, je m'appelle Peter.",
-  blog: "Le Blogs",
+  blog: "Le Blog",
 };
 
 interface headerProps {
