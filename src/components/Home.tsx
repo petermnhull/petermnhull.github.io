@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
-const Home = () => {
+export default function Home() {
   return (
     <div>
       <Header page="home" />
@@ -52,6 +52,4 @@ const Home = () => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}

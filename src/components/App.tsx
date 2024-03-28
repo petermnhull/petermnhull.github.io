@@ -15,7 +15,7 @@ const getBlogRoutes = () => {
   ));
 };
 
-const App = () => {
+export default function App() {
   return (
     <React.StrictMode>
       <HashRouter>
@@ -28,6 +28,4 @@ const App = () => {
       </HashRouter>
     </React.StrictMode>
   );
-};
-
-export default App;
+}

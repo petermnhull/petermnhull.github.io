@@ -10,13 +10,11 @@ const getBlogContents = () => {
   ));
 };
 
-const Blogs = () => {
+export default function Blogs() {
   return (
     <div>
       <Header page="blog" />
       {getBlogContents()}
     </div>
   );
-};
-
-export default Blogs;
+}

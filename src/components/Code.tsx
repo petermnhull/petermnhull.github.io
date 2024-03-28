@@ -6,12 +6,10 @@ interface codeProps {
   language: string;
 }
 
-const Code = (p: codeProps) => {
+export default function Code(p: codeProps) {
   return (
     <SyntaxHighlighter language={p.language} style={docco}>
       {p.children}
     </SyntaxHighlighter>
   );
-};
-
-export default Code;
+}

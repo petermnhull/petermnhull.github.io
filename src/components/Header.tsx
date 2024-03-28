@@ -31,7 +31,7 @@ const getTitle = (language: Language, key: string): string => {
   }
 };
 
-const Header = (p: headerProps) => {
+export default function Header(p: headerProps) {
   const [language, setLanguage] = React.useState(Language.EN);
   return (
     <div id="header">
@@ -52,6 +52,4 @@ const Header = (p: headerProps) => {
       </div>
     </div>
   );
-};
-
-export default Header;
+}

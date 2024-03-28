@@ -13,7 +13,7 @@ const markdownOptions = {
   },
 };
 
-const Blog = (p: blogProps) => {
+export default function Blog(p: blogProps) {
   const [post, setPost] = React.useState("");
   React.useEffect(() => {
     import(`./blogs/${p.fileName}`)
@@ -33,6 +33,4 @@ const Blog = (p: blogProps) => {
       </div>
     </div>
   );
-};
-
-export default Blog;
+}
