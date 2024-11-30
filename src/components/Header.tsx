@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
 import React from "react";
-
-enum Language {
-  EN,
-  FR,
-}
+import { Language } from "./language";
 
 const titlesEN: Record<string, string> = {
   home: "Hi, I'm Peter 🌱",
@@ -18,6 +15,8 @@ const titlesFR: Record<string, string> = {
 
 interface headerProps {
   page: string;
+  language: Language;
+  setLanguage: Dispatch<SetStateAction<Language>>;
 }
 
 const getTitle = (language: Language, key: string): string => {
@@ -32,7 +31,6 @@ const getTitle = (language: Language, key: string): string => {
 };
 
 export default function Header(p: headerProps) {
-  const [language, setLanguage] = React.useState(Language.EN);
   return (
     <div id="header">
       <div className="alignleft">
@@ -44,11 +42,11 @@ export default function Header(p: headerProps) {
         </Link>
       </div>
       <div className="aligncenter">
-        <b>{getTitle(language, p.page)}</b>
+        <b>{getTitle(p.language, p.page)}</b>
       </div>
       <div className="alignright">
-        <button onClick={() => setLanguage(Language.EN)}>En</button>
-        <button onClick={() => setLanguage(Language.FR)}>Fr</button>
+        <button onClick={() => p.setLanguage(Language.EN)}>En</button>
+        <button onClick={() => p.setLanguage(Language.FR)}>Fr</button>
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
 import Header from "./Header";
 import { blogs } from "./constants";
+import { Language } from "./language";
 
 const getBlogContents = () => {
   return blogs.map((blog) => (
@@ -10,10 +12,15 @@ const getBlogContents = () => {
   ));
 };
 
-export default function Blogs() {
+interface blogsProps {
+  language: Language;
+  setLanguage: Dispatch<SetStateAction<Language>>;
+}
+
+export default function Blogs(p: blogsProps) {
   return (
     <div>
-      <Header page="blog" />
+      <Header page="blog" language={p.language} setLanguage={p.setLanguage} />
       {getBlogContents()}
     </div>
   );

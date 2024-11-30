@@ -1,10 +1,13 @@
 import Markdown from "markdown-to-jsx";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Code from "./Code";
 import Header from "./Header";
+import { Language } from "./language";
 
 interface blogProps {
   fileName: string;
+  language: Language;
+  setLanguage: Dispatch<SetStateAction<Language>>;
 }
 
 const markdownOptions = {
@@ -27,7 +30,7 @@ export default function Blog(p: blogProps) {
   });
   return (
     <div>
-      <Header page="blog" />
+      <Header page="blog" language={p.language} setLanguage={p.setLanguage} />
       <div id="post">
         <Markdown options={markdownOptions}>{post}</Markdown>
       </div>

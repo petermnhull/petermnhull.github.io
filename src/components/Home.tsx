@@ -1,10 +1,17 @@
+import { Dispatch, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import { Language } from "./language";
 
-export default function Home() {
+interface homeProps {
+  language: Language;
+  setLanguage: Dispatch<SetStateAction<Language>>;
+}
+
+export default function Home(p: homeProps) {
   return (
     <div>
-      <Header page="home" />
+      <Header page="home" language={p.language} setLanguage={p.setLanguage} />
       <img
         className="websiteImg"
         src="profile.jpg"
