@@ -75,7 +75,7 @@ export default function Home(l: LanguageProps) {
           .
         </p>
         <p>
-          {t.text3} <b>{t.bold2}</b> {t.text4} <b>{t.bold3}</b>, {t.text5}{" "}
+          {t.text3} <b>{t.bold2}</b> {t.text4} <b>{t.bold3}</b> {t.text5}{" "}
           <a href="https://arenko.group/">{t.link2}</a>.
         </p>
         <p>
