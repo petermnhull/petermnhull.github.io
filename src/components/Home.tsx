@@ -51,9 +51,8 @@ const translations: Record<Language, translation> = {
     link2: "Arenko",
     text6: "J'ai étudié les",
     bold4: "mathématiques",
-    text7:
-      "à Imperial College, où j’ai travaillé sur des modèles mathématiques des",
-    link3: "spermatozoïdes",
+    text7: "à Imperial College, où j’ai travaillé sur des",
+    link3: "modèles mathématiques des spermatozoïdes",
   },
 };
 
