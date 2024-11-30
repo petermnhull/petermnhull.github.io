@@ -53,7 +53,7 @@ const translations: Record<Language, translation> = {
     bold4: "mathématiques",
     text7:
       "à Imperial College, où j’ai travaillé sur des modèles mathématiques des",
-    link3: "cellules spermatiques",
+    link3: "spermatozoïdes",
   },
 };
 
