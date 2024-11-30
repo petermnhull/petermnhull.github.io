@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
-import React from "react";
 import { Language } from "./language";
 
 const titlesEN: Record<string, string> = {
