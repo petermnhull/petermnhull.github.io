@@ -7,12 +7,12 @@ enum Language {
 }
 
 const titlesEN: Record<string, string> = {
-  home: "Hi, I'm Peter.",
+  home: "Hi, I'm Peter 🌱",
   blog: "Blog",
 };
 
 const titlesFR: Record<string, string> = {
-  home: "Salut, je m'appelle Peter.",
+  home: "Salut, je m'appelle Peter 🌱",
   blog: "Le Blog",
 };
 

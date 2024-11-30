@@ -14,9 +14,8 @@ export default function Home() {
       ></img>
       <div>
         <p>
-          I'm a <b>Lead Software Engineer</b> who loves <i>music</i>,{" "}
-          <i>science</i>, and <i>sustainability</i>. I also occasionally{" "}
-          <Link to="/blog">write</Link>.
+          I'm a <b>Lead Software Engineer</b> who loves music, table tennis, and
+          animals. I also occasionally <Link to="/blog">write</Link>.
         </p>
         <p>
           I specialise in <b>backend</b> and <b>machine learning</b> systems,
