@@ -38,7 +38,7 @@ const translations: Record<Language, translation> = {
     link3: "mathematical sperm cells",
   },
   [Language.FR]: {
-    text1: "Je suis un",
+    text1: "Je suis",
     bold1: "Lead Développeur",
     text2:
       "qui aime la musique, le tennis de table, et les animaux. De temps en temps, je tiens un",
