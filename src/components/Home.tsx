@@ -24,7 +24,7 @@ const translations: Record<Language, translation> = {
   [Language.EN]: {
     text1: "I'm a",
     bold1: "Lead Software Engineer",
-    text2: "who loves music, table tennis, and animals. I also occasionally",
+    text2: "and I love music, table tennis, and animals. I also occasionally",
     link1: "write",
     text3: "I specialise in",
     bold2: "backend",
@@ -41,7 +41,7 @@ const translations: Record<Language, translation> = {
     text1: "Je suis",
     bold1: "Lead Développeur",
     text2:
-      "qui aime la musique, le tennis de table, et les animaux. De temps en temps, je tiens un",
+      "j'aime la musique, le tennis de table, et les animaux. De temps en temps, je tiens un",
     link1: "blog",
     text3: "Je me spécialise dans les",
     bold2: "systèmes back-end",
@@ -71,8 +71,8 @@ export default function Home(l: LanguageProps) {
       ></img>
       <div>
         <p>
-          {t.text1} <b>{t.bold1}</b> {t.text2} <Link to="/blog">{t.link1}</Link>
-          .
+          {t.text1} <b>{t.bold1}</b>, {t.text2}{" "}
+          <Link to="/blog">{t.link1}</Link>.
         </p>
         <p>
           {t.text3} <b>{t.bold2}</b> {t.text4} <b>{t.bold3}</b> {t.text5}{" "}
