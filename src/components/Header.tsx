@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Dispatch, SetStateAction } from "react";
-import { Language } from "./language";
+import { Language, LanguageProps } from "./language";
 import { Page } from "./pages";
 
 const translations: Record<Language, Record<Page, string>> = {
@@ -16,12 +15,11 @@ const translations: Record<Language, Record<Page, string>> = {
 
 interface headerProps {
   page: Page;
-  language: Language;
-  setLanguage: Dispatch<SetStateAction<Language>>;
+  languageProps: LanguageProps;
 }
 
 export default function Header(p: headerProps) {
-  const title = translations[p.language][p.page];
+  const title = translations[p.languageProps.language][p.page];
   return (
     <div id="header">
       <div className="alignleft">
@@ -36,8 +34,12 @@ export default function Header(p: headerProps) {
         <b>{title}</b>
       </div>
       <div className="alignright">
-        <button onClick={() => p.setLanguage(Language.EN)}>En</button>
-        <button onClick={() => p.setLanguage(Language.FR)}>Fr</button>
+        <button onClick={() => p.languageProps.setLanguage(Language.EN)}>
+          En
+        </button>
+        <button onClick={() => p.languageProps.setLanguage(Language.FR)}>
+          Fr
+        </button>
       </div>
     </div>
   );

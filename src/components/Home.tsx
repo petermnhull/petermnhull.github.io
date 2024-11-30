@@ -1,13 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import { Language } from "./language";
+import { Language, LanguageProps } from "./language";
 import { Page } from "./pages";
-
-interface homeProps {
-  language: Language;
-  setLanguage: Dispatch<SetStateAction<Language>>;
-}
 
 interface translation {
   text1: string;
@@ -63,15 +57,11 @@ const translations: Record<Language, translation> = {
   },
 };
 
-export default function Home(p: homeProps) {
-  const c = translations[p.language];
+export default function Home(l: LanguageProps) {
+  const t = translations[l.language];
   return (
     <div>
-      <Header
-        page={Page.HOME}
-        language={p.language}
-        setLanguage={p.setLanguage}
-      />
+      <Header page={Page.HOME} languageProps={l} />
       <img
         className="websiteImg"
         src="profile.jpg"
@@ -81,16 +71,16 @@ export default function Home(p: homeProps) {
       ></img>
       <div>
         <p>
-          {c.text1} <b>{c.bold1}</b> {c.text2} <Link to="/blog">{c.link1}</Link>
+          {t.text1} <b>{t.bold1}</b> {t.text2} <Link to="/blog">{t.link1}</Link>
           .
         </p>
         <p>
-          {c.text3} <b>{c.bold2}</b> {c.text4} <b>{c.bold3}</b>, {c.text5}{" "}
-          <a href="https://arenko.group/">{c.link2}</a>.
+          {t.text3} <b>{t.bold2}</b> {t.text4} <b>{t.bold3}</b>, {t.text5}{" "}
+          <a href="https://arenko.group/">{t.link2}</a>.
         </p>
         <p>
-          {c.text6} <b>{c.bold4}</b> {c.text7}{" "}
-          <a href="https://github.com/petermnhull/MastersProject">{c.link3}</a>.
+          {t.text6} <b>{t.bold4}</b> {t.text7}{" "}
+          <a href="https://github.com/petermnhull/MastersProject">{t.link3}</a>.
         </p>
       </div>
       <div id="footer">

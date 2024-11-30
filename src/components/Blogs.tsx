@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { Dispatch, SetStateAction } from "react";
 import Header from "./Header";
 import { blogs } from "./constants";
-import { Language } from "./language";
+import { LanguageProps } from "./language";
 import { Page } from "./pages";
 
 const getBlogContents = () => {
@@ -13,19 +12,10 @@ const getBlogContents = () => {
   ));
 };
 
-interface blogsProps {
-  language: Language;
-  setLanguage: Dispatch<SetStateAction<Language>>;
-}
-
-export default function Blogs(p: blogsProps) {
+export default function Blogs(l: LanguageProps) {
   return (
     <div>
-      <Header
-        page={Page.BLOG}
-        language={p.language}
-        setLanguage={p.setLanguage}
-      />
+      <Header page={Page.BLOG} languageProps={l} />
       {getBlogContents()}
     </div>
   );
