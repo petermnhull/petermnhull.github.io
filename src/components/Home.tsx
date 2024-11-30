@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import { Language } from "./language";
+import { Page } from "./pages";
 
 interface homeProps {
   language: Language;
@@ -66,7 +67,11 @@ export default function Home(p: homeProps) {
   const c = translations[p.language];
   return (
     <div>
-      <Header page="home" language={p.language} setLanguage={p.setLanguage} />
+      <Header
+        page={Page.HOME}
+        language={p.language}
+        setLanguage={p.setLanguage}
+      />
       <img
         className="websiteImg"
         src="profile.jpg"

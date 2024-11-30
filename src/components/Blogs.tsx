@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import Header from "./Header";
 import { blogs } from "./constants";
 import { Language } from "./language";
+import { Page } from "./pages";
 
 const getBlogContents = () => {
   return blogs.map((blog) => (
@@ -20,7 +21,11 @@ interface blogsProps {
 export default function Blogs(p: blogsProps) {
   return (
     <div>
-      <Header page="blog" language={p.language} setLanguage={p.setLanguage} />
+      <Header
+        page={Page.BLOG}
+        language={p.language}
+        setLanguage={p.setLanguage}
+      />
       {getBlogContents()}
     </div>
   );

@@ -1,35 +1,27 @@
 import { Link } from "react-router-dom";
 import { Dispatch, SetStateAction } from "react";
 import { Language } from "./language";
+import { Page } from "./pages";
 
-const titlesEN: Record<string, string> = {
-  home: "Hi, I'm Peter 🌱",
-  blog: "Blog",
-};
-
-const titlesFR: Record<string, string> = {
-  home: "Salut, je m'appelle Peter 🌱",
-  blog: "Le Blog",
+const translations: Record<Language, Record<Page, string>> = {
+  [Language.EN]: {
+    [Page.HOME]: "Hi, I'm Peter",
+    [Page.BLOG]: "Blog",
+  },
+  [Language.FR]: {
+    [Page.HOME]: "Salut, je m'appelle Peter",
+    [Page.BLOG]: "Le Blog",
+  },
 };
 
 interface headerProps {
-  page: string;
+  page: Page;
   language: Language;
   setLanguage: Dispatch<SetStateAction<Language>>;
 }
 
-const getTitle = (language: Language, key: string): string => {
-  switch (language) {
-    case Language.EN:
-      return titlesEN[key];
-    case Language.FR:
-      return titlesFR[key];
-    default:
-      return titlesEN[key];
-  }
-};
-
 export default function Header(p: headerProps) {
+  const title = translations[p.language][p.page];
   return (
     <div id="header">
       <div className="alignleft">
@@ -41,7 +33,7 @@ export default function Header(p: headerProps) {
         </Link>
       </div>
       <div className="aligncenter">
-        <b>{getTitle(p.language, p.page)}</b>
+        <b>{title}</b>
       </div>
       <div className="alignright">
         <button onClick={() => p.setLanguage(Language.EN)}>En</button>
