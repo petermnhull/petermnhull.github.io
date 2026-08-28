@@ -14,7 +14,7 @@ const translations: Record<Language, ReactElement> = {
   [Language.EN]: (
     <div>
       <p>
-        I'm a <b>Lead Software Engineer</b> who loves music, table tennis, and
+        I'm a <b>Lead Software Engineer</b> who loves music, languages, and
         animals. I also occasionally <Link to={blogLink}>write</Link>.
       </p>
       <p>
