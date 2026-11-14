@@ -40,7 +40,7 @@ const translations: Record<Language, ReactElement> = {
         ces technologies chez <a href={workLink}>Arenko</a>.
       </p>
       <p>
-        J'ai étudié les <b>mathématiques</b> à Imperial College, où j’ai
+        J'ai étudié les <b>mathématiques</b> à Imperial College, où j'ai
         travaillé sur des{" "}
         <a href={mastersProjectLink}>
           modèles mathématiques des spermatozoïdes

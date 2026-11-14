@@ -4,10 +4,14 @@ import Home from "./Home";
 import Blog from "./Blog";
 import Blogs from "./Blogs";
 import NotFound from "./NotFound";
-import { Language } from "./language";
+import { initialLanguage, languageCodes, saveLanguage } from "./language";
 
 export default function App() {
-  const [language, setLanguage] = React.useState(Language.EN);
+  const [language, setLanguage] = React.useState(initialLanguage);
+  React.useEffect(() => {
+    document.documentElement.lang = languageCodes[language];
+    saveLanguage(language);
+  }, [language]);
   const languageProps = { language, setLanguage };
   return (
     <React.StrictMode>
@@ -19,7 +23,7 @@ export default function App() {
             path="blog/:slug"
             element={<Blog languageProps={languageProps} />}
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound language={language} />} />
         </Routes>
       </HashRouter>
     </React.StrictMode>
