@@ -16,7 +16,7 @@
     "prebuild": "npm run blog-index",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --dotfiles",
     "format": "prettier \"src/**/*.{ts,tsx,css}\" scripts --write"
   },
   "eslintConfig": {

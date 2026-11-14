@@ -33,9 +33,17 @@ export default function Blog(p: blogProps) {
     }
     setBody(undefined);
     fetch(`${process.env.PUBLIC_URL}/blog/${post.slug}.md`)
-      .then((res) => res.text())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Failed to load post: ${res.status}`);
+        }
+        return res.text();
+      })
       .then((text) => setBody(stripFrontmatter(text)))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setBody("Sorry, this post didn't load. Try refreshing the page.");
+      });
   }, [post]);
 
   if (!post) {
