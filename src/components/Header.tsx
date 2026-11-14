@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Language, LanguageProps } from "./language";
 import { Page } from "./pages";
 
@@ -24,12 +24,12 @@ export default function Header(p: headerProps) {
   return (
     <header id="header">
       <nav className="header-left">
-        <Link className="round-button" to="/" aria-label="Home">
+        <NavLink className="round-button" to="/" end aria-label="Home">
           🏠
-        </Link>
-        <Link className="round-button" to="/blog" aria-label="Blog">
+        </NavLink>
+        <NavLink className="round-button" to="/blog" aria-label="Blog">
           ✍️
-        </Link>
+        </NavLink>
       </nav>
       <div className="header-title">{title}</div>
       <div className="header-right">

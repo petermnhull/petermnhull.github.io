@@ -160,7 +160,8 @@ time {
 }
 
 .round-button:hover,
-.round-button[aria-pressed="true"] {
+.round-button[aria-pressed="true"],
+.round-button[aria-current="page"] {
   background-color: var(--accent);
   color: var(--bg);
 }
