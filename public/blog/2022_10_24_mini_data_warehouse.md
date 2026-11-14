@@ -25,7 +25,7 @@ All of this led to one idea: a Mini Data Warehouse. We needed to be able to quer
 
 This is what the pipeline we came up with looks like:
 
-![Pipeline Part 1](/images/blog_2022_10_24_a.webp)
+![Pipeline Part 1](../images/blog_2022_10_24_a.webp)
 
 ### Kafka Event Middleware
 
@@ -90,7 +90,7 @@ This downside, along with a few other reasons, lead us to making some external c
 
 At the time of writing, the pipeline looks a little something like this:
 
-![Pipeline Part 2](/images/blog_2022_10_24_b.webp)
+![Pipeline Part 2](../images/blog_2022_10_24_b.webp)
 
 This gives us numerous advantages:
 

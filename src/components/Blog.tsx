@@ -11,13 +11,25 @@ interface blogProps {
   languageProps: LanguageProps;
 }
 
-const markdownOptions = {
+const postUrl = (slug: string) =>
+  new URL(`${process.env.PUBLIC_URL}/blog/${slug}.md`, window.location.href);
+
+// Resolve image paths relative to the post file, so the same relative path
+// works on the site and when viewing the Markdown on GitHub.
+const markdownOptions = (slug: string) => ({
   overrides: {
     img: {
-      props: { loading: "lazy" },
+      component: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+        <img
+          {...props}
+          alt={props.alt}
+          src={props.src && new URL(props.src, postUrl(slug)).href}
+          loading="lazy"
+        />
+      ),
     },
   },
-};
+});
 
 const stripFrontmatter = (text: string) =>
   text.replace(/^---\n[\s\S]*?\n---\n/, "");
@@ -32,7 +44,7 @@ export default function Blog(p: blogProps) {
       return;
     }
     setBody(undefined);
-    fetch(`${process.env.PUBLIC_URL}/blog/${post.slug}.md`)
+    fetch(postUrl(post.slug))
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load post: ${res.status}`);
@@ -59,7 +71,7 @@ export default function Blog(p: blogProps) {
         {body === undefined ? (
           <p className="loading">Loading…</p>
         ) : (
-          <Markdown options={markdownOptions}>{body}</Markdown>
+          <Markdown options={markdownOptions(post.slug)}>{body}</Markdown>
         )}
       </article>
     </div>

@@ -17,7 +17,7 @@ The Adverse Media & Insight product provides a way to automate this final step, 
 
 How do we provide that data? We have a pipeline which scrapes the web for articles and uses machine learning models to figure out who is in the article (i.e. [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition)) and what they've done (i.e. Text Classification). If the models decide that Bob Smith showed up in a BBC article for laundering money, the pipeline then sends that information to somewhere our client-facing systems can access. The pipeline looks like this:
 
-![Pipeline](/images/blog_2022_11_02_a.webp)
+![Pipeline](../images/blog_2022_11_02_a.webp)
 
 ## What if we want to change a model?
 
@@ -40,7 +40,7 @@ We came up with a solution which automated the process for us, which consisted o
 1. Test Data Extraction - A simple Python script running as a Kubernetes job for pulling test articles from a database and pushing them into the start of the pipeline.
 2. Analysis - A Python script using [Papermill](https://github.com/nteract/papermill) which generated analysis in Jupyter Notebooks. On completion, the results were stored in S3 in the form of HTML files for the completed notebooks, charts and CSVs.
 
-![Pipeline Analysis](/images/blog_2022_11_02_b.webp)
+![Pipeline Analysis](../images/blog_2022_11_02_b.webp)
 
 This looked ideal, as anytime we want to deploy a new model we can run the pipeline and check if everything looks good in the analysis notebooks.
 
