@@ -47,7 +47,7 @@ The events look something like this:
     "status": "200",
     "body": "{\"data\":{...}",
     "headers": {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     }
   },
   "accountId": "123"
@@ -86,7 +86,7 @@ The pipeline enabled us to rebuild the data into a consistent state.
 
 A downside of this design is that we can only send request/response pairs to S3 if the request was served by `Arpeggio`.
 
-This downside, along with a few other reasons, lead us to making some external changes so we could use the pipeline for a broader scope. Instead of using Ambassador to route requests to `Arpeggio` or `AppCA-PHP`, we move that logic into the `Arpeggio` application code. This means that everything gets served by `Arpeggio`.
+This downside, along with a few other reasons, led us to make some external changes so we could use the pipeline for a broader scope. Instead of using Ambassador to route requests to `Arpeggio` or `AppCA-PHP`, we move that logic into the `Arpeggio` application code. This means that everything gets served by `Arpeggio`.
 
 At the time of writing, the pipeline looks a little something like this:
 
