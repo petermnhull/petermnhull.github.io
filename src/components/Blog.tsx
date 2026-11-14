@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import { LanguageProps } from "./language";
+import { Language, LanguageProps } from "./language";
 import { Page } from "./pages";
 import { findPost, formatDate } from "./posts";
 
@@ -31,13 +31,28 @@ const markdownOptions = (slug: string) => ({
   },
 });
 
+const translations: Record<Language, { loading: string; failed: string }> = {
+  [Language.EN]: {
+    loading: "Loading…",
+    failed: "Sorry, this post didn't load. Try refreshing the page.",
+  },
+  [Language.FR]: {
+    loading: "Chargement…",
+    failed:
+      "Désolé, cet article n'a pas pu être chargé. Essayez de rafraîchir la page.",
+  },
+};
+
 const stripFrontmatter = (text: string) =>
   text.replace(/^---\n[\s\S]*?\n---\n/, "");
 
 export default function Blog(p: blogProps) {
   const { slug } = useParams();
   const post = findPost(slug);
-  const [body, setBody] = React.useState<string>();
+  const language = p.languageProps.language;
+  const text = translations[language];
+  // undefined while loading, null if the post failed to load
+  const [body, setBody] = React.useState<string | null>();
 
   React.useEffect(() => {
     if (!post) {
@@ -54,12 +69,12 @@ export default function Blog(p: blogProps) {
       .then((text) => setBody(stripFrontmatter(text)))
       .catch((err) => {
         console.log(err);
-        setBody("Sorry, this post didn't load. Try refreshing the page.");
+        setBody(null);
       });
   }, [post]);
 
   if (!post) {
-    return <NotFound />;
+    return <NotFound language={language} />;
   }
 
   return (
@@ -67,9 +82,11 @@ export default function Blog(p: blogProps) {
       <Header page={Page.BLOG} languageProps={p.languageProps} />
       <article id="post">
         <h1>{post.title}</h1>
-        <time dateTime={post.date}>{formatDate(post.date)}</time>
+        <time dateTime={post.date}>{formatDate(post.date, language)}</time>
         {body === undefined ? (
-          <p className="loading">Loading…</p>
+          <p className="loading">{text.loading}</p>
+        ) : body === null ? (
+          <p className="loading">{text.failed}</p>
         ) : (
           <Markdown options={markdownOptions(post.slug)}>{body}</Markdown>
         )}

@@ -198,6 +198,14 @@ time {
 
 /* Blog list */
 
+#post-list-note {
+  max-width: var(--reading-width);
+  margin: 0 auto var(--space-3);
+  text-align: left;
+  color: var(--muted);
+  font-style: italic;
+}
+
 #post-list {
   list-style: none;
   max-width: var(--reading-width);
