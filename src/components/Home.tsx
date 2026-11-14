@@ -31,9 +31,8 @@ const translations: Record<Language, ReactElement> = {
   [Language.FR]: (
     <div>
       <p>
-        Je suis <b>Lead Développeur</b>, j'aime la musique, le tennis de table,
-        et les animaux. De temps en temps, je tiens un{" "}
-        <Link to={blogLink}>blog</Link>.
+        Je suis <b>Lead Développeur</b>, j'aime la musique, les langues, et les
+        animaux. De temps en temps, je tiens un <Link to={blogLink}>blog</Link>.
       </p>
       <p>
         Je me spécialise dans les <b>systèmes back-end</b> et{" "}
