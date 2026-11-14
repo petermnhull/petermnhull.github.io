@@ -25,7 +25,7 @@ Runs the app in the development mode with live reloading.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run predeploy`
+### `npm run build`
 
 Builds the app for production to the `build` folder.
 
@@ -33,6 +33,6 @@ Builds the app for production to the `build` folder.
 
 Run the production build on [http://localhost:3000](http://localhost:3000).
 
-### `npm run deploy`
+## Deployment
 
-Deploys the app build via `gh-pages`.
+Every push to `main` is built and deployed to GitHub Pages by `.github/workflows/deploy.yml`. You can also re-run a deploy by hand from the Actions tab.
