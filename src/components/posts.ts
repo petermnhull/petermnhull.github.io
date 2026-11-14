@@ -17,4 +17,7 @@ export const formatDate = (date: string, language: Language) =>
     day: "numeric",
     month: "long",
     year: "numeric",
+    // Dates have no time, so show them as written rather than shifted into
+    // the visitor's time zone (which would make them a day early in the US).
+    timeZone: "UTC",
   });

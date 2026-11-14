@@ -13,7 +13,7 @@ date: 2025-01-01
 ---
 ```
 
-Put images in `public/images/` (WebP, around 1400px wide) and reference them as `![Alt text](../images/my_image.webp)` (relative paths make images show up both on the site and when viewing the file on GitHub). Use fenced code blocks for code.
+Put images in `public/images/` (WebP, around 1400px wide) and reference them as `![Alt text](../images/my_image.webp)` (relative paths make images show up both on the site and when viewing the file on GitHub). Link to another post by its file name, e.g. `[my other post](2024_01_02_gophercon_2023.md)`. Use fenced code blocks for code.
 
 The blog list is generated from the frontmatter automatically when you run `npm start` or `npm run build`.
 
