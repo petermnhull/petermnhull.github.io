@@ -3,35 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.0",
-    "@types/node": "^16.11.17",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-router-dom": "^5.3.3",
     "markdown-to-jsx": "^7.1.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "typescript": "^4.5.4",
-    "web-vitals": "^2.1.2"
+    "react-router-dom": "^6.4.2"
   },
   "scripts": {
+    "blog-index": "node scripts/build-blog-index.js",
+    "prestart": "npm run blog-index",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "prebuild": "npm run blog-index",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "format": "prettier --config .prettierrc 'src/**/*.ts*' --write"
+    "format": "prettier \"src/**/*.{ts,tsx,css}\" scripts --write"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -47,9 +37,11 @@
     ]
   },
   "devDependencies": {
-    "@types/react-syntax-highlighter": "^15.5.5",
+    "@types/node": "^16.18.126",
+    "@types/react": "^17.0.93",
+    "@types/react-dom": "^17.0.26",
     "gh-pages": "^3.2.3",
     "prettier": "^2.7.1",
-    "react-router-dom": "^6.4.2"
+    "typescript": "^4.9.5"
   }
 }

@@ -2,6 +2,21 @@
 
 My personal website, currently hosted [here](http://petermnhull.github.io).
 
+## Writing a post
+
+Add a Markdown file to `public/blog/`, named however you want the URL slug to look (e.g. `2025_01_01_my_post.md`), starting with:
+
+```md
+---
+title: "My Post"
+date: 2025-01-01
+---
+```
+
+Put images in `public/images/` (WebP, around 1400px wide) and reference them as `![Alt text](/images/my_image.webp)`. Use fenced code blocks for code.
+
+The blog list is generated from the frontmatter automatically when you run `npm start` or `npm run build`.
+
 ## Development
 
 ### `npm start`
