@@ -123,6 +123,7 @@ time {
 }
 
 .header-title {
+  margin: 0;
   font-size: var(--text-xl);
   font-weight: 700;
   line-height: 1.2;

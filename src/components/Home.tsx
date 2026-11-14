@@ -18,7 +18,7 @@ const translations: Record<Language, ReactElement> = {
         animals. I also occasionally <Link to={blogLink}>write</Link>.
       </p>
       <p>
-        I specialise in <b>backend</b> and <b> machine learning</b> systems, and
+        I specialise in <b>backend</b> and <b>machine learning</b> systems, and
         currently I work on things like this at <a href={workLink}>Arenko</a>.
       </p>
       <p>

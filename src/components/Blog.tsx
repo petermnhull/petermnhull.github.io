@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import { Language, LanguageProps } from "./language";
@@ -14,10 +14,21 @@ interface blogProps {
 const postUrl = (slug: string) =>
   new URL(`${process.env.PUBLIC_URL}/blog/${slug}.md`, window.location.href);
 
-// Resolve image paths relative to the post file, so the same relative path
-// works on the site and when viewing the Markdown on GitHub.
+// Resolve image paths relative to the post file, and turn links to other posts
+// (e.g. "other_post.md") into site links, so the same Markdown works on the
+// site and when viewing it on GitHub.
 const markdownOptions = (slug: string) => ({
   overrides: {
+    a: {
+      component: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+        const otherPost = props.href?.match(/^([\w-]+)\.md$/);
+        return otherPost ? (
+          <Link to={`/blog/${otherPost[1]}`}>{props.children}</Link>
+        ) : (
+          <a {...props}>{props.children}</a>
+        );
+      },
+    },
     img: {
       component: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
         <img
@@ -53,6 +64,8 @@ export default function Blog(p: blogProps) {
   const text = translations[language];
   // undefined while loading, null if the post failed to load
   const [body, setBody] = React.useState<string | null>();
+  // Created once per post, so images aren't re-created on every render
+  const options = React.useMemo(() => markdownOptions(slug ?? ""), [slug]);
 
   React.useEffect(() => {
     if (!post) {
@@ -74,12 +87,16 @@ export default function Blog(p: blogProps) {
   }, [post]);
 
   if (!post) {
-    return <NotFound language={language} />;
+    return <NotFound {...p.languageProps} />;
   }
 
   return (
     <div>
-      <Header page={Page.BLOG} languageProps={p.languageProps} />
+      <Header
+        page={Page.BLOG}
+        languageProps={p.languageProps}
+        postTitle={post.title}
+      />
       <article id="post">
         <h1>{post.title}</h1>
         <time dateTime={post.date}>{formatDate(post.date, language)}</time>
@@ -88,7 +105,7 @@ export default function Blog(p: blogProps) {
         ) : body === null ? (
           <p className="loading">{text.failed}</p>
         ) : (
-          <Markdown options={markdownOptions(post.slug)}>{body}</Markdown>
+          <Markdown options={options}>{body}</Markdown>
         )}
       </article>
     </div>
