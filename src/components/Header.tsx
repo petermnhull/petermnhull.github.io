@@ -19,28 +19,35 @@ interface headerProps {
 }
 
 export default function Header(p: headerProps) {
-  const title = translations[p.languageProps.language][p.page];
+  const { language, setLanguage } = p.languageProps;
+  const title = translations[language][p.page];
   return (
-    <div id="header">
-      <div className="alignleft">
-        <Link to="/">
-          <button>🏠</button>
+    <header id="header">
+      <nav className="header-left">
+        <Link className="round-button" to="/" aria-label="Home">
+          🏠
         </Link>
-        <Link to="/blog">
-          <button>✍️</button>
+        <Link className="round-button" to="/blog" aria-label="Blog">
+          ✍️
         </Link>
-      </div>
-      <div className="aligncenter">
-        <b>{title}</b>
-      </div>
-      <div className="alignright">
-        <button onClick={() => p.languageProps.setLanguage(Language.EN)}>
+      </nav>
+      <div className="header-title">{title}</div>
+      <div className="header-right">
+        <button
+          className="round-button"
+          aria-pressed={language === Language.EN}
+          onClick={() => setLanguage(Language.EN)}
+        >
           En
         </button>
-        <button onClick={() => p.languageProps.setLanguage(Language.FR)}>
+        <button
+          className="round-button"
+          aria-pressed={language === Language.FR}
+          onClick={() => setLanguage(Language.FR)}
+        >
           Fr
         </button>
       </div>
-    </div>
+    </header>
   );
 }
